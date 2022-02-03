@@ -24,7 +24,7 @@ namespace NavrhoveVzory1.Models
 
         public override string ToString()
         {
-            return Jmeno + ", " + Vek + "let, " + Gender.ToString() + ", je Školák";
+            return Jmeno + ", " + Vek + "let, " + Gender.ToString() + ", je pracující";
         }
     }
 }
