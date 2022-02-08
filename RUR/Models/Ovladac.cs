@@ -11,18 +11,27 @@ namespace RUR.Models
         public static List<Robot> Robots { get; set; } = new List<Robot>();
         public static Robot? AddNewRobot(string name)
         {
-            if (Robots == null)
-            {
-                Robots = new List<Robot>();
-            }
             var newRobor = new Robot(name, null);
+            if(Robots.Where(x=>x.Name == name).Any())
+                return newRobor;
             Robots.Add(newRobor);
             return newRobor;
         }
 
         public static void PredejPovel(int posRobot, int posPovel)
         {
-            var cinPovel = posPovel switch
+            if(posRobot > Robots.Count - 1)
+            {
+                Console.WriteLine("---------- \nZadaná pozice robota neodpovídá žádnému robotovi. \n ----------");
+                return;
+            }
+            var robot = Robots[posRobot - 1];
+            robot.ProvedCinnost(Povel.Povels[posPovel - 1]);
+        }
+
+        public static void PridejPovel(int type, int cas, string misto)
+        {
+            var cinPovel = type switch
             {
                 1 => CinnostType.brouseni,
                 2 => CinnostType.rezani,
@@ -30,6 +39,8 @@ namespace RUR.Models
                 4 => CinnostType.vrtani,
                 _ => CinnostType.defaultpos
             };
+            Povel.NewPovel(cinPovel, cas, misto);
+            
         }
     }
 }

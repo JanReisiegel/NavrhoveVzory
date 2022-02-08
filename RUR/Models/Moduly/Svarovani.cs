@@ -18,7 +18,7 @@ namespace RUR.Models.Moduly
         }
         public override void Pracuj(int time)
         {
-            Console.WriteLine("Řežu, čas: " + time);
+            Console.WriteLine("Svářím, čas: " + time);
         }
 
         public override string? ToString()

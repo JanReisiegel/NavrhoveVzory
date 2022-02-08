@@ -10,7 +10,8 @@ namespace RUR.Models
     {
         private string _name;
         private Modul? _activeModul;
-
+        public int Cas { get; set; }
+        public string Name { get; }
         public Robot(string name, Modul? activeModul)
         {
             _name=name;
@@ -19,7 +20,9 @@ namespace RUR.Models
 
         public void ProvedCinnost(Povel povel)
         {
-
+            _activeModul = Modul.GetModulInstance(povel.Cinnost);
+            Console.WriteLine(povel.Cas);
+            _activeModul.Pracuj(povel.Cas);
         }
         public string VypisCinnost()
         {

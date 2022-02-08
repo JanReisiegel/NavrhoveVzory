@@ -11,7 +11,10 @@ namespace RUR.Models
         private readonly CinnostType _cinnost;
         private readonly int _cas;
         private readonly string _misto;
-        public static List<Povel> Povels { get; set; } = new List<Povel>();
+        public CinnostType Cinnost { get { return _cinnost; } }
+        public int Cas { get { return _cas; } }
+        public static List<Povel> Povels { get; private set; } = new List<Povel>();
+
         private Povel(CinnostType cinnost, int cas, string misto)
         {
             _cinnost = cinnost;
@@ -19,10 +22,14 @@ namespace RUR.Models
             _misto = misto;
         }
 
-        public Povel NewPovel(CinnostType type, int cas, string misto)
+        public static Povel NewPovel(CinnostType type, int cas, string misto)
         {
             Povel newPovel = new Povel(type, cas, misto);
-            Povels.Add(newPovel);
+            if (!Povels.Contains(newPovel))
+            {
+                Povels.Add(newPovel);
+            }
+            Console.WriteLine(type.ToString() + ", čas: " + cas + ", místo: " + misto);
             return newPovel;
         }
     }

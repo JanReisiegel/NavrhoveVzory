@@ -20,7 +20,7 @@ namespace RUR.Models.Moduly
 
         public override void Pracuj(int time)
         {
-            Console.WriteLine("Řežu, čas: " + time);
+            Console.WriteLine("Brousím, čas: " + time);
         }
 
         public override string? ToString()
