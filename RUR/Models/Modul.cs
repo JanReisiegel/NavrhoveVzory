@@ -10,6 +10,7 @@ namespace RUR.Models
     public class Modul
     {
         private CinnostType _type;
+        public CinnostType Type { get { return _type; } }
         public Modul(CinnostType type)
         {
             _type = type;
@@ -30,6 +31,7 @@ namespace RUR.Models
                 default: return null;
             }
         }
+
         public virtual void Pracuj(int time)
         {
             Console.WriteLine("Nedělám nic, čas: " + time);
