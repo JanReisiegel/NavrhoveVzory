@@ -8,18 +8,19 @@ namespace IPTV.Models
 {
     internal class Prijimac
     {
-        public string vysilacId;
+        public string? vysilacId;
         
 
-        public Prijimac(string vId)
+        public Prijimac(string? vId)
         {
             vysilacId=vId;
             
         }
 
-        public void PrijemVysilani (Zprava msg)
+        public bool PrijemVysilani (Zprava msg)
         {
-
+            Console.WriteLine($"Zpráva \"{msg.text}\" byla přijata ");
+            return true;
         }
     }
 }

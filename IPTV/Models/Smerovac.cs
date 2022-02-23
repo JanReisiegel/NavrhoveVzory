@@ -11,10 +11,10 @@ namespace IPTV.Models
         private const int capacity = 30 ;
         public static Smerovac smerovac;
         private Dictionary<Prijimac, Vysilac> prijimace;
-        private Queue<string> neprijateZpravy = new Queue<string>(capacity);
+        private Queue<Zprava> neprijateZpravy = new Queue<Zprava>(capacity);
         private Smerovac()
         {
-            prijimace = new List<Prijimac>();
+            prijimace = new Dictionary<Prijimac, Vysilac>();
         }
 
         public static Smerovac NewSmerovac()
@@ -28,8 +28,10 @@ namespace IPTV.Models
         {
             if (prijimace.ContainsKey(prij))
             {
+                Console.WriteLine("Tento přijímač již přijímá");
                 return;
             }
+            vys.typVysilani = type;
             prijimace.Add(prij, vys);
         }
 
@@ -46,9 +48,14 @@ namespace IPTV.Models
                 Vysilac vys = Vysilac.NewVysilac(msg.vysilacId, msg.type);
                 if (i.Value.Equals(vys))
                 {
-                    i.Key.
+                    doruceno = i.Key.PrijemVysilani(msg);
                 }
             }
+            if (doruceno)
+                return;
+            if (neprijateZpravy.Count >= 100)
+                neprijateZpravy.Dequeue();
+            neprijateZpravy.Enqueue(msg);
         }
 
     }

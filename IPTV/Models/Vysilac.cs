@@ -27,8 +27,14 @@ namespace IPTV.Models
             if (!vysilace.Contains(newVysilac))
             {
                 vysilace.Add(newVysilac);
+                Console.WriteLine("Vysílač vytvořen.");
             }
             return newVysilac;
+        }
+
+        public void Vysilani(string msgText, TypVysilani type)
+        {
+            Smerovac.smerovac.Prenos(new Zprava(_idVysilace, type, msgText));
         }
     }
 }
