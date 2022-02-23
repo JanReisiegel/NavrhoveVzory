@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NavrhoveVzory1", "NavrhoveVzory1\NavrhoveVzory1.csproj", "{FE123BF4-73F0-41F3-9BD9-20FEB5D02F15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RUR", "RUR\RUR.csproj", "{F3A3A221-A363-4424-87A0-6852B4FF2B72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RUR", "RUR\RUR.csproj", "{F3A3A221-A363-4424-87A0-6852B4FF2B72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPTV", "IPTV\IPTV.csproj", "{0078B1B6-62C6-4F9B-A336-23D864777E36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F3A3A221-A363-4424-87A0-6852B4FF2B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3A3A221-A363-4424-87A0-6852B4FF2B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3A3A221-A363-4424-87A0-6852B4FF2B72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0078B1B6-62C6-4F9B-A336-23D864777E36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0078B1B6-62C6-4F9B-A336-23D864777E36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0078B1B6-62C6-4F9B-A336-23D864777E36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0078B1B6-62C6-4F9B-A336-23D864777E36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
